@@ -1,0 +1,51 @@
+/* dotted-list
+	----------------------------------- */
+.dotted-list
+   $parent: &
+   
+   li
+      position: relative
+      padding-left: 30px
+      +f('gil-500', 20, 28)
+      +xs
+         padding-left: 15px
+         font-size: 16px
+         line-height: 20px
+         
+      &::before
+         position: absolute
+         top: 10px
+         left: 0
+         width: 10px
+         height: 10px
+         background-color: $color2
+         border-radius: 50%
+         content: ''
+         +xs
+            top: 7px
+            width: 5px
+            height: 5px
+   
+      &:not(:last-child)
+         margin-bottom: 18px
+         +xs
+            margin-bottom: 10px
+   &_horiz
+      display: flex
+      +xs
+         display: block
+      
+      li
+         padding-left: 0
+         padding-top: 30px
+         
+         &:not(:last-child)
+            margin-bottom: 0
+         
+         &::before
+            top: 0
+            left: calc(50% - 5px)
+            +xs
+               top: 10px
+               width: 10px
+               height: 10px

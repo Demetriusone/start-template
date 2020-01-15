@@ -1,0 +1,21 @@
+.socials
+  display: flex
+  a
+    display: flex
+    align-items: center
+    justify-content: center
+    line-height: 1
+    transition: .4s ease-in-out
+    &:hover
+      background-color: $color1
+    &:not(:last-child)
+      margin-right: 19px
+      
+    &:hover .socials__icon .for-fill
+      stroke: $color2
+    
+  &__icon
+    height: 20px
+    stroke: $white
+    .for-fill
+      transition: .3s ease

@@ -1,0 +1,148 @@
+/* promo-code
+	----------------------------------- */
+.promo-code
+	$parent: &
+	width: 320px
+	text-align: center
+	+xs
+		width: auto
+		
+	&__form
+		display: none
+		margin-bottom: 60px
+		font-size: 0
+		line-height: 0
+		letter-spacing: 0
+		+xs
+			margin-bottom: 40px
+		
+		&-group
+			position: relative
+			display: inline-block
+			vertical-align: middle
+			width: 160px
+			+xs
+				width: 100%
+			&:not(:last-child)
+				margin: 0
+				+xs
+					margin: 0 0 25px
+			
+			&-clear-btn
+				position: absolute
+				top: 0
+				right: 0
+				bottom: 0
+				width: 40px
+				z-index: 1
+				opacity: 0
+				pointer-events: none
+				transition: opacity .3s ease-in-out
+				
+				&:hover
+					svg
+						fill: $white
+						
+				svg
+					width: 10px
+					height: 10px
+					fill: $color1
+					transition: fill .3s ease-in-out
+				
+				.has-value &
+					opacity: 1
+					pointer-events: auto
+				
+			&.has-error
+				#{$parent}__form-control
+					border-color: #E75F5F
+					
+				& ~ .help-block
+					opacity: 1
+					display: inline-block
+					width: 100%
+					margin-top: 10px
+		
+		&-control
+			padding: 0 32px 0 22px
+			+f('gil-600', 20, 20)
+			border: 1px solid $color1
+			border-radius: 26px
+			background-color: transparent
+			box-shadow: none !important
+			+xs
+				font-size: 18px
+				line-height: 18px
+		
+		.help-block
+			right: 0
+			width: 100%
+			font-size: 14px
+			line-height: 24px
+			color: #E75F5F
+			text-align: center
+			+xs
+				top: 34px
+	&__apply-btn
+		vertical-align: middle
+		width: 140px
+		padding: 15px
+		margin-left: 20px
+		+xs
+			order: -1
+			width: 100%
+			margin-left: 0
+	
+	&__action
+		&-btn
+			display: flex
+			align-items: center
+			margin: 0 auto 15px
+			color: $color1
+			text-transform: uppercase
+			+f('gil-700', 13, 16)
+			letter-spacing: 1px
+			transition: .3s ease-in-out
+	
+			&:hover
+				+rmin(1200)
+					color: $white
+			
+			&-icon
+				margin-left: 10px
+				margin-bottom: 5px
+				width: 12px
+				height: 6px
+				stroke-width: 5
+				stroke: currentColor
+				fill: currentColor
+				transition: transform .3s ease-in-out
+		&-btn.is-active &-btn-icon
+			transform: scaleY(-1)
+
+	&__success
+		display: none
+		color: #BA66FF
+		font-size: 0
+		line-height: 0
+		letter-spacing: 0
+		width: 210px
+		margin: 0 auto 30px
+		&-icon
+			position: relative
+			top: -3px
+			display: inline-block
+			vertical-align: middle
+			fill: #BA66FF
+			width: 48px
+			height: 48px
+			margin-right: 20px
+		p
+			display: inline-block
+			vertical-align: middle
+			width: calc(100% - 68px)
+			+f('gil-600', 20, 24)
+			text-align: left
+			+xs
+				font-size: 18px
+				line-height: 22px

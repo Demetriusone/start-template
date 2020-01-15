@@ -1,0 +1,6 @@
+mixin checkBox(classMod, text)
+	+b.checkbox(class= classMod)
+		+e.LABEL.label
+			+e.INPUT.input(type='checkbox' name='checkbox')&attributes(attributes)
+			+e.visual
+			+e.SPAN.text!= text

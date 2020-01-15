@@ -1,0 +1,161 @@
+.gym-effect
+   padding: 100px 0
+   background-color: #f3f4f3
+   +xs
+      padding: 60px 0
+   
+   &__container
+      max-width: 1230px
+      +md
+         padding: 0 80px
+      +xs
+         padding: 0 20px
+   
+   &__title
+      opacity: 0
+      transform: translateX(-80px)
+      margin-bottom: 12px
+      color: $color4
+      +md
+         font-size: 80px
+      +sm
+         font-size: 78px
+      +xs
+         margin-bottom: 20px
+         font-size: 30px
+         line-height: 40px
+      
+   &__info
+      max-width: 592px
+      margin-left: auto
+      margin-right: 100px
+      +md
+         margin-left: 0
+         margin-right: 0
+      &-list
+         +f('gil-500')
+         font-size: 20px
+         line-height: 28px
+         +xs
+            font-size: 16px
+            line-height: 26px
+         
+         li
+            position: relative
+            padding-left: 50px
+            &:not(:last-child)
+               margin-bottom: 15px
+               +xs
+                  margin-bottom: 10px
+      
+            i
+               position: absolute
+               top: 0
+               left: 0
+               width: 30px
+               height: 30px
+               transform: rotate(45deg)
+               
+               &::before, &::after
+                  position: absolute
+                  z-index: 1
+                  content: ''
+                  background-color: $color1
+         
+               &::before
+                  top: 23px
+                  left: 5px
+                  width: 14px
+                  height: 4px
+         
+               &::after
+                  top: -3px
+                  left: 16px
+                  width: 4px
+                  height: 30px
+            
+      &-btn
+         +xs
+            width: 100%
+         &-wrap
+            opacity: 0
+            transform: translateX(-60px)
+            margin-top: 25px
+            +xs
+               margin-top: 20px
+         
+   &__faq
+      margin-top: 90px
+      +md
+         margin: 90px -40px 0
+      +xs
+         margin: 60px 0 0
+
+/* .faq-block
+	----------------------------------- */
+.faq-block
+   transform: translateY(100px)
+   display: flex
+   align-items: flex-start
+   justify-content: space-between
+   padding: 63px 48px 57px 50px
+   background-color: $white
+   +md
+      padding: 63px 40px 57px 50px
+   +sm
+      display: block
+      padding: 40px 30px
+   
+   &__title
+      flex: 0 0 425px
+      text-align: left
+      +md
+         flex: 0 0 250px
+      +sm
+         flex: none
+         margin-bottom: 20px
+   
+   &__content
+      flex: 1
+      padding-left: 33px
+      +sm
+         padding-left: 0
+   
+      dl
+         font-size: 22px
+         line-height: 24px
+   
+         &:not(:last-of-type)
+            margin-bottom: 37px
+            +xs
+               margin-bottom: 20px
+      
+      dt
+         margin-bottom: 25px
+         color: $color3
+         letter-spacing: 1px
+         +f('gil-700', 22, 24)
+         +xs
+            margin-bottom: 0
+            font-size: 16px
+            line-height: 26px
+         
+      dd
+         margin-inline-start: 0
+         +f('gil-500')
+         +xs
+            font-size: 16px
+            line-height: 26px
+      a
+         color: #E6DA93
+         box-shadow: 0 1px 0 currentColor
+         transition: .3s ease-in-out
+   
+         &:hover
+            box-shadow: none
+
+      b, strong
+         +f('gil-700')
+         
+      i
+         +f('gil-500i')

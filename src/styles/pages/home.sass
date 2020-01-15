@@ -1,0 +1,770 @@
+.screen
+   overflow: hidden
+   height: 100vh
+   +cover
+   +mob-fix
+      height: 170vh
+   +md
+      padding-bottom: 40px
+   +sm
+      background-position: 26% 0
+      padding-bottom: 90px
+   +xs
+      min-height: 620px
+      padding-bottom: 0
+      background-position: 95% 0
+   
+   &__container
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: flex-end
+      height: 100%
+      +md
+         max-width: 990px
+         justify-content: flex-end
+      +xs
+         align-items: center
+         
+   //&__bg
+      position: absolute
+      z-index: 1
+      bottom: -20%
+      left: calc(50% - 43vw)
+      height: 140%
+      max-width: none
+      +md
+         height: 100%
+         bottom: 0
+         left: -100px
+      +sm
+         display: none
+
+   &__content
+      position: relative
+      z-index: 2
+      padding-right: 56px
+      max-width: 740px
+      text-align: right
+      color: $white
+      +lg
+         padding-right: 10px
+      +xs
+         display: flex
+         flex-direction: column
+         justify-content: space-between
+         height: 80%
+         padding: 0 0 30px
+         text-align: center
+         
+      > div
+         opacity: 0
+         transform: translateX(50px)
+         
+   &__sub-title
+      margin-bottom: 20px
+      text-align: right
+      +lg
+         margin-bottom: 40px
+      +xs
+         margin: 0 auto 15px
+         text-align: center
+         max-width: 240px
+         
+   &__title
+      padding-right: 4px
+      &_mod
+         display: block
+         margin-left: 16px
+         white-space: nowrap
+         color: $color2
+         
+      span
+         +xs
+            display: block
+         
+   &__descr
+      display: inline-block
+      margin: 50px 0 30px
+      max-width: 480px
+      letter-spacing: 0.006em
+      +md
+         margin: 30px 0
+      +xs
+         padding: 0 15px
+      p
+         max-height: 112px
+         
+   &__btn
+      margin-right: 4px
+      opacity: 0
+      transform: translateX(50px)
+      +xs
+         margin: 0 20px
+
+.about-program
+   position: relative
+   padding: 122px 0 254px
+   overflow: hidden
+   background-color: #a8dcbf
+   +lg
+      padding: 68px 0 136px
+   +md
+      padding: 68px 0 90px
+   +xs
+      padding: 48px 0 38px
+   
+   &__container
+      max-width: 1160px
+      +lg
+         max-width: 1210px
+   
+   &__text
+      max-width: 580px
+      margin: 0 auto 180px
+      text-align: center
+      +lg
+         margin: 0 auto 95px
+      +md
+         margin: 0 auto 65px
+      +xs
+         margin: 0 auto 58px
+   
+   &__title
+      margin-bottom: 35px
+      +md
+         margin-bottom: 40px
+      +xs
+         margin-bottom: 27px
+   
+   &__descr
+      max-width: 600px
+      margin: 0 auto
+      letter-spacing: 0.006em
+   
+   &__inner
+      display: flex
+      +md
+         max-width: 555px
+         padding-left: 50px
+         margin: 0 auto
+         flex-direction: column
+      +xs
+         padding-left: 0
+         
+   &__item
+      flex: 0 1 33.33333%
+      +md
+         display: flex
+      +xs
+         flex: 0 1 auto
+         flex-direction: column
+         align-items: center
+         padding: 0 15px
+         
+      &:not(:last-child)
+         +md
+            margin-bottom: 65px
+         +xs
+            margin-bottom: 45px
+   
+      &:nth-child(1)
+         padding-right: 28px
+         +md
+            padding-right: 0
+         +xs
+            padding: 0 12px
+      &:nth-child(2)
+         padding-right: 20px
+         +lg
+            padding-right: 50px
+         +md
+            padding-right: 0
+         +xs
+            padding: 0 12px
+         .about-program__item-descr
+            margin: 0 auto
+            max-width: 340px
+            
+      &:nth-child(3)
+         padding-right: 10px
+         +lg
+            padding-right: 70px
+         +md
+            padding-right: 0
+         +xs
+            padding: 0 12px
+   
+      &-img
+         width: 120px
+         height: 120px
+         margin: 0 auto 65px
+         +cover-img
+         +md
+            flex: 0 0 120px
+            margin: 0 38px 0 0
+         +xs
+            margin: 0 auto 23px
+         
+      &-text
+         text-align: center
+         color: $color1
+         +md
+            text-align: left
+         +xs
+            text-align: center
+      
+      &-title
+         margin-bottom: 30px
+         +f('gil-700', 22)
+         line-height: 1.09
+         +xs
+            margin-bottom: 22px
+            line-height: 22px
+   
+      &-descr
+         line-height: 25px
+         p
+            max-height: 148px
+
+.what-program
+   overflow: hidden
+   padding: 122px 0 292px
+   +lg
+      padding: 70px 0 140px
+   +md
+      padding: 76px 0 66px
+   +xs
+      padding: 45px 0 55px
+   
+   &__title
+      margin-bottom: 140px
+      +lg
+         margin-bottom: 88px
+      +md
+         margin-bottom: 68px
+      +xs
+         max-width: 215px
+         margin: 0 auto 30px
+   
+   &__slider
+   
+   
+.team
+   display: flex
+   height: 1024px
+   +lg
+      height: 768px
+   +md
+      flex-direction: column
+      height: auto
+   
+   &__person
+      $parent: &
+      opacity: 0
+      display: flex
+      flex-direction: column
+      justify-content: center
+      flex: 0 1 50%
+      +cover
+      color: $white
+      +lg
+         background-position: 50% 20%
+      +md
+         position: relative
+         flex: 0 1 auto
+         height: 768px
+         background-image: none!important
+      +xs
+         justify-content: flex-start
+         height: 568px
+      
+      &_left
+         align-items: flex-end
+         transform: translateX(-100px)
+      &_right
+         align-items: flex-start
+         transform: translateX(100px)
+      &-text
+         opacity: 0
+         max-width: 384px
+         +md
+            position: relative
+            z-index: 1
+         #{$parent}_left &
+            padding: 0 5px 275px 0
+            text-align: left
+            transform: translateX(-80px)
+            +lg
+               padding: 0 5px 187px 30px
+            +md
+               max-width: 445px
+               padding: 0 50px 207px 0
+            +sm
+               max-width: 395px
+            +xs
+               padding: 45px 15px
+               text-align: center
+   
+         #{$parent}_right &
+            padding: 0 4px 65px 15px
+            text-align: right
+            transform: translateX(80px)
+            +lg
+               padding: 0 30px 5px 15px
+            +md
+               max-width: 505px
+               padding: 0 40px 35px 140px
+            +sm
+               max-width: 375px
+               padding: 0 40px 35px 30px
+            +xs
+               padding: 45px 15px
+               text-align: center
+               
+      &-name
+         margin-bottom: 20px
+         text-align: left
+         +xs
+            margin-bottom: 17px
+            text-align: center
+         #{$parent}_right &
+            text-align: right
+            +xs
+               text-align: center
+               
+      &-descr
+         p
+            max-height: 140px
+   
+      &-bg
+         display: none
+         +coverdiv
+         +cover
+         
+         #{$parent}_left &
+            background-position: 0 50%
+            +sm
+               background-position: 10% 50%
+         #{$parent}_right &
+            background-position: 100% 50%
+            +sm
+               background-position: 50% 50%
+         &_tab
+            +md
+               display: block
+            +xs
+               display: none
+         &_mob
+            +xs
+               display: block
+            
+         
+.teaser
+   height: 1024px
+   +cover
+   opacity: 0
+   transform: translateX(-100px)
+   +lg
+      height: 768px
+   +xs
+      height: 568px
+      
+   &__container
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: flex-end
+      height: 100%
+      +xs
+         align-items: center
+         justify-content: flex-start
+      
+   &__text
+      max-width: 660px
+      padding-right: 74px
+      color: $white
+      text-align: right
+      +lg
+         padding-right: 0
+      +md
+         padding-right: 40px
+      +sm
+         padding-right: 20px
+      +xs
+         padding: 40px 0 0
+         text-align: center
+   
+   &__sub-title
+      margin-bottom: 15px
+      text-align: right
+      +md
+         margin-bottom: 35px
+      +xs
+         margin-bottom: 7px
+         text-align: center
+   
+   &__title
+   
+   &__descr
+      display: inline-block
+      max-width: 395px
+      margin-top: 40px
+      +md
+         max-width: 370px
+         margin-top: 30px
+      +xs
+         margin-top: 18px
+      p
+         max-height: 140px
+         
+.how-look
+   position: relative
+   height: 1024px
+   +lg
+      height: 760px
+   +md
+      height: 768px
+   +xs
+      height: 568px
+      
+   &__container
+      +xs
+         padding: 0 10px
+   
+   &__media
+      +coverdiv
+      overflow: hidden
+      +cover
+      &::after
+         pointer-events: none
+         +coverdiv
+         background: rgba($color1, .2)
+         content: ''
+      
+      video
+         min-width: 100%
+         min-height: 100%
+         +cover-video
+         
+   &__content
+      max-width: 750px
+      margin: 0 auto
+      padding: 125px 0 0
+      color: $white
+      text-align: center
+      +lg
+         padding: 75px 0 0
+      +md
+         padding: 85px 0 0
+      +xs
+         padding: 45px 0 0
+   
+   &__title
+      margin-bottom: 10px
+      +xs
+         margin-bottom: 20px
+   
+   &__text
+      margin-bottom: 53px
+      +xs
+         margin-bottom: 30px
+      p
+         max-height: 140px
+         
+   &__btn
+      padding: 20px 61px
+      
+.results
+   position: relative
+   padding: 125px 0 257px
+   overflow: hidden
+   +lg
+      padding: 83px 0 128px
+   +xs
+      padding: 40px 0 36px
+   
+   &__container
+      max-width: 1320px
+      +md
+         padding: 0
+   
+   &__title
+      margin-bottom: 170px
+      +lg
+         margin-bottom: 85px
+      +xs
+         margin-bottom: 45px
+         
+.prices
+   $parent: &
+   position: relative
+   padding: 124px 0 307px
+   background-color: #a8e1c2
+   overflow: hidden
+   +md
+      padding: 103px 0 240px
+   +sm
+      padding: 100px 0
+   +xs
+      padding: 45px 0 40px
+      
+   &_gym
+      padding: 105px 0 240px
+      
+   &_white
+      background-color: $white
+   
+   &__container
+      +xs
+         padding: 0 26px
+   
+   &__back-title
+      margin-top: -260px
+   
+   &__text
+      margin: 0 0 210px
+      color: $white
+      text-align: center
+      +lg
+         margin: 0 0 120px
+      +xs
+         margin: 0 0 32px
+   
+   
+      #{$parent}_gym &
+         margin: 0 0 107px
+         +xs
+            margin-bottom: 25px
+   
+   &__title
+      margin-bottom: 10px
+   &__descr
+      +md
+         +f('gil-600')
+         font-size: 20px
+      +sm
+         +f('gil-400', 16, 22)
+         
+      p
+         max-height: 140px
+      
+   &__inner
+      display: flex
+      justify-content: center
+      padding: 0 0 40px
+      +sm
+         position: relative
+         margin: -50px 0 0
+      +xs
+         margin: -20px 0 0
+         flex-direction: column
+         padding-bottom: 40px
+   
+      #{$parent}_gym &
+         padding: 0 0 60px
+   
+      .slick-list
+         +sm
+            padding: 20px 0 40px
+         +xs
+            margin: 0 -20px
+            padding: 0
+            
+      .slick-dots_white li button
+         #{$parent}_white &
+            background-color: $color1
+   
+   &__item
+      display: flex !important
+      flex-direction: column
+      align-items: center
+      flex: 0 1 50%
+      padding: 0 30px
+      text-align: center
+      color: $color1
+      +md
+         padding: 30px 20px 0
+         
+      &_color
+         color: $white
+   
+         #{$parent}_white &
+            color: $color1
+         
+      &-value
+         position: relative
+         margin-bottom: 18px
+         +f('gil-800', 74)
+         line-height: 1
+         +md
+            font-size: 50px
+         +sm
+            font-size: 70px
+         +xs
+            font-size: 60px
+            
+         &_uah
+            font-size: 24px
+            +md
+               font-size: 24px
+            +sm
+               font-size: 24px
+            +xs
+               font-size: 24px
+   
+         #{$parent}_gym &
+            margin-bottom: 17px
+
+         i
+            font-size: 35px
+            position: absolute
+            bottom: 100%
+            left: 100%
+            transform: translateX(-60%)
+            +f('gil-700')
+            font-style: normal
+            font-weight: 400
+            color: $white
+            white-space: nowrap
+            +xs
+               transform: translateX(-40%)
+               bottom: calc(100% - 3px)
+               left: 100%
+               +f('gil-600')
+               font-size: 25px
+               
+            #{$parent}_white &
+               color: $color1
+               
+            &::before
+               position: absolute
+               top: calc(50% - 5px)
+               left: -8px
+               right: -8px
+               height: 3px
+               opacity: .5
+               z-index: 1
+               transform: rotate(-20deg)
+               background-color: currentColor
+               content: ''
+               +xs
+                  left: -6px
+                  right: -6px
+                  height: 2px
+                  transform: rotate(-18deg)
+         
+         sup
+            position: absolute
+            top: -6px
+            right: calc(100% + 10px)
+            +f('gil-700', 50)
+            line-height: 1
+            +xs
+               +f('gil-900')
+               font-size: 46px
+               
+   
+         &_uah
+            i
+               font-size: 18px
+               bottom: calc(100% + 2px)
+               +xs
+                  font-size: 18px
+                  bottom: calc(100% + 2px)
+   
+               &::before
+                  top: calc(50% - 2px)
+                  transform: rotate(0)
+                  content: ''
+                  +xs
+                     top: calc(50% - 2px)
+                     transform: rotate(0)
+         
+      &-title
+         margin-bottom: 18px
+         +f('gil-600', null, 24)
+         +sm
+            max-width: 250px
+            margin: 0 auto
+            min-height: 48px
+         +xs
+            font-size: 20px
+            max-width: none
+            margin: 0 0 10px
+            min-height: 0
+   
+         #{$parent}_gym &
+            margin-bottom: 20px
+   
+         span
+            display: block
+            +f('gil-900')
+            text-transform: uppercase
+      &-btn
+         padding: 20px 61px
+         +xs
+            width: 100%
+            padding: 20px 30px
+    
+         span
+            color: $white
+         
+      &-checkbox
+         display: flex
+         justify-content: center
+         +sm
+            pointer-events: none
+         +xs
+            margin-bottom: 15px
+         .checkbox__label
+            display: flex
+            flex-direction: column
+         .checkbox__text
+            margin: 0 0 15px
+            +f('gil-600', 22)
+            +xs
+               margin: 0
+            
+         .checkbox__visual
+            order: 1
+            margin: 0 auto
+            +sm
+               display: none
+               
+            #{$parent}_white &
+               background-color: $color1
+         .checkbox__visual::before
+            #{$parent}_white &
+               background-color: $white
+            
+      &-promo-code
+         position: absolute
+         top: 100%
+         left: 50%
+         z-index: 1
+         transform: translateX(-50%)
+         pointer-events: none
+         opacity: 0 !important
+         +sm
+            position: static
+            top: auto
+            left: auto
+            opacity: 1 !important
+            pointer-events: auto
+            transform: none
+            margin: 10px auto 0
+         +xs
+            margin: 0
+            
+         &.is-visible
+            opacity: 1 !important
+            pointer-events: auto
+
+         .form
+            #{$parent}_gym &
+               margin-bottom: 50px
+               
+         .promo-code__action-btn
+            #{$parent}_white &
+               color: $color1

@@ -1,0 +1,117 @@
+.gym-suit
+   position: relative
+   padding: 100px 0
+   color: $white
+   background-color: #b6afad
+   +xs
+      padding: 60px 0
+   
+   &__bg
+      +coverdiv
+      +cover-img
+      pointer-events: none
+   
+   sup
+      top: -0.1em
+      font-size: 100%
+      color: #F96464
+      
+   &__container
+      max-width: 1128px
+      +md
+         padding: 0 40px
+      +xs
+         padding: 0 20px
+         max-width: 320px
+         margin: 0
+   
+   &__list
+      
+      &-block
+         &:not(:first-child)
+            margin-top: 64px
+            +xs
+               margin-top: 30px
+      &-title
+         opacity: 0
+         transform: translateX(-80px)
+         margin-bottom: 33px
+         +f('gil-800', 20, 24)
+         +xs
+            margin-bottom: 20px
+
+      li
+         position: relative
+         padding-left: 50px
+         +f('gil-500', 20, 28)
+         +xs
+            padding-left: 40px
+            font-size: 16px
+            line-height: 26px
+            
+         &:not(:last-child)
+            margin-bottom: 24px
+            +xs
+               margin-bottom: 10px
+
+         i
+            position: absolute
+            top: -8px
+            left: -5px
+            width: 40px
+            height: 40px
+            border-radius: 50%
+            content: ''
+            +xs
+               top: -5px
+   
+            &::before, &::after
+               position: absolute
+               z-index: 1
+               content: ''
+               background-color: $white
+               
+         sup
+            right: 3px
+   
+      &_correct
+         max-width: 594px
+         +md
+            max-width: 450px
+         i
+            transform: rotate(45deg)
+            background-color: $color4
+            +xs
+               transform: scale(.7) rotate(45deg)
+   
+            &::before
+               top: 24px
+               left: 15px
+               width: 8px
+               height: 4px
+   
+            &::after
+               top: 12px
+               left: 21px
+               width: 4px
+               height: 16px
+   
+      &_wrong
+         max-width: 490px
+         i
+            background-color: #F96464
+            +xs
+               transform: scale(.7)
+   
+            &::before
+               top: calc(50% - 2px)
+               left: calc(50% - 6px)
+               width: 12px
+               height: 4px
+               content: ''
+
+   &__add
+      opacity: 0
+      transform: translateX(-60px)
+      max-width: 488px
+      margin-top: 30px

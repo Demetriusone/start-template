@@ -1,0 +1,193 @@
+.gym-screen
+   position: relative
+   height: 735px
+   color: $white
+   +xs
+      height: 568px
+    
+   &::before, &::after
+      position: absolute
+      top: 0
+      bottom: 0
+      z-index: -1
+      width: 26%
+      content: ''
+      +md
+         display: none
+      
+   &::before
+      left: 0
+      background: url(../img/bg/gym-screen_bg-pattern_l.jpg)
+      
+   &::after
+      right: 0
+      background: url(../img/bg/gym-screen_bg-pattern_r.jpg)
+      +xs
+         display: block
+         width: 100%
+         z-index: 1
+         pointer-events: none
+         background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.71) 100%)
+   
+   &__bg
+      +coverdiv
+      img
+         display: block
+         margin: 0 auto
+         height: 100%
+         +md
+            position: relative
+            min-width: 1280px
+            left: 50%
+            margin-left: -688px
+         +sm
+            margin-left: -730px
+         +xs
+            left: 50%
+            transform: translateX(-51.3%)
+            min-width: 768px
+            margin: 0
+         
+   video
+      position: absolute
+      width: 0
+      height: 0
+   
+   &__container
+      display: flex
+      flex-direction: column
+      justify-content: flex-end
+      height: 100%
+      padding: 103px 15px 60px
+      +md
+         max-width: 974px
+      +sm
+         max-width: 768px
+      +xs
+         position: relative
+         z-index: 2
+         max-width: 380px
+         padding: 66px 10px 44px
+   
+   &__head
+      margin-bottom: auto
+      +xs
+         max-width: 300px
+         margin: 0 auto auto
+   
+   &__title
+      opacity: 0
+      transform: translateY(50px)
+      font-size: 130px
+      line-height: 1
+      +lg
+         font-size: 130px
+         line-height: 1
+      +md
+         font-size: 100px
+      +sm
+         margin-bottom: 15px
+         font-size: 72px
+      +xs
+         margin-bottom: 0
+         font-size: 40px
+         line-height: 40px
+      
+      > *
+         display: flex
+         +xs
+            flex-wrap: wrap
+         span
+            &:first-of-type
+               +xs
+                  margin-left: auto
+            &:last-of-type
+               margin-left: auto
+               +xs
+                  margin-left: 0
+                  display: block
+   
+   &__sub-title
+      opacity: 0
+      transform: translateY(30px)
+      margin-top: -5px
+      padding-right: 105px
+      +f('gil-900', 50, 64)
+      color: $color1
+      text-align: right
+      text-transform: uppercase
+      +md
+         padding-right: 20px
+      +sm
+         padding-right: 0
+         font-size: 40px
+         line-height: 40px
+      +xs
+         padding-right: 10px
+         font-size: 20px
+         line-height: 24px
+         width: 100px
+         margin-left: auto
+         text-align: left
+      span
+         margin-left: 200px
+         +xs
+            margin-left: 0
+
+   &__about
+      display: flex
+      align-items: flex-end
+      justify-content: space-between
+      +sm
+         padding: 0 20px
+      +xs
+         padding: 0 10px
+      &-inner
+         max-width: 488px
+         +md
+            max-width: 508px
+      
+      &-title
+         opacity: 0
+         transform: translateX(-60px)
+         margin-bottom: 24px
+         +xs
+            margin-bottom: 20px
+            font-size: 20px
+            line-height: 22px
+         
+      &-list
+         li
+      
+   &__actions
+      display: flex
+      margin-top: 30px
+      +xs
+         margin-top: 20px
+      &-btn
+         &:not(:first-child)
+            margin-left: 30px
+            +xs
+               margin-left: 20px
+         span
+            +sm
+               color: $white
+            +xs
+               color: $color4
+            span
+               +xs
+                  display: none
+
+   &__label
+      opacity: 0
+      transform: translateX(80px)
+      padding-right: 80px
+      +md
+         padding-right: 60px
+      +sm
+         flex-shrink: 0
+         padding-right: 0
+      +xs
+         display: none
+      span
+         display: block

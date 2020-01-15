@@ -1,0 +1,100 @@
+.ask
+   padding: 60px 0 50px
+   background-color: $color4
+   +xs
+      padding: 60px 0
+   
+   &__container
+      display: flex
+      max-width: 1130px
+      +md
+         padding: 0 40px
+      +sm
+         display: block
+      +xs
+         padding: 0 20px
+   
+   &__action
+      opacity: 0
+      transform: translateX(-80px)
+      flex: 0 0 420px
+      +md
+         flex: 0 0 350px
+      +sm
+         text-align: center
+         margin-bottom: 30px
+      +xs
+         margin-bottom: 50px
+         
+      &-title
+         margin-bottom: 30px
+         text-align: left
+         line-height: 42px
+         +sm
+            margin-bottom: 20px
+            text-align: center
+         +xs
+            margin-bottom: 25px
+   
+      &-btn
+         +xs
+            width: 100%
+   
+   &__sub
+      opacity: 0
+      transform: translateX(80px)
+      padding-left: 30px
+      +sm
+         max-width: 540px
+         margin: 0 auto
+         padding-left: 0
+      
+      &-title
+         margin-bottom: 36px
+         +sm
+            margin-bottom: 25px
+            text-align: center
+         +xs
+            margin-bottom: 20px
+            font-size: 20px
+            line-height: 24px
+            text-align: left
+   
+   &__form
+      &-row
+         display: flex
+         align-items: center
+         margin-bottom: 20px
+         +xs
+            display: block
+      
+      &-group
+         flex: 0 1 340px
+         margin-right: 20px
+         +xs
+            flex: none
+            margin-right: 0
+         
+         &:not(:last-child)
+            margin-bottom: 0
+            
+      &-control
+         height: 40px
+         padding: 0 30px
+         border-color: $white
+         background-color: transparent
+         letter-spacing: 1px
+         font-size: 13px
+         line-height: 13px
+         +placeholder-color(rgba($white, .5))
+         +xs
+            font-size: 16px
+            line-height: 26px
+   
+      &-submit
+         flex: 0 0 165px
+         padding: 14px 15px 13px
+         +xs
+            flex: none
+            width: 100%
+            margin-top: 10px

@@ -1,0 +1,249 @@
+// basic styles
+body
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+  min-width: 320px
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  +f('gil-400', 20, 28)
+  color: $color3
+  +md
+    font-size: 18px
+  +xs
+    font-size: 16px
+    line-height: 22px
+    
+  &.is-locked
+    overflow: hidden!important
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    height: 100%
+    
+.content
+  overflow: hidden
+  
+.container
+  position: relative
+  max-width: 1200px
+  padding: 0 15px
+  margin: 0 auto
+  &_lg
+    max-width: 1230px
+  
+/* titles
+	----------------------------------- */
+.title-sm
+  +f('gil-700', 22, 24)
+  color: $white
+  
+.title-md
+  +f('gil-500', 36, 40)
+  text-align: center
+  letter-spacing: 1px
+  text-transform: uppercase
+  +md
+    font-size: 30px
+    line-height: 34px
+    letter-spacing: 0.8px
+  +xs
+    font-size: 30px
+    line-height: 36px
+
+.title-lg
+  +f('gil-900', 120, 120)
+  text-transform: uppercase
+  +lg
+    font-size: 100px
+    line-height: 90px
+  +xs
+    font-size: 58px
+    line-height: 60px
+  
+.back-title
+  position: absolute
+  top: 50%
+  left: 50%
+  opacity: 0
+  transform: translateX(-50%) translateY(100px)
+  margin-top: -300px
+  color: rgba($color1, .05)
+  pointer-events: none
+  +f('gil-900', 500, 500)
+  white-space: nowrap
+  +xs
+    display: none
+
+/* buttons
+	----------------------------------- */
+.btn
+  position: relative
+  display: inline-block
+  padding: 20px 56px
+  text-align: center
+  outline: 0
+  line-height: 1
+  cursor: pointer
+  +f('gil-700', 13)
+  letter-spacing: 1px
+  text-transform: uppercase
+  border-radius: 26px
+  overflow: hidden
+  backface-visibility: hidden
+  background-color: $color1
+  z-index: 1
+  .no-touch &:hover
+    background: $color2
+    transition: background .2s .2s
+    &::before
+      transform: translate3d(0, 75px, 0)
+    &::after
+      transform: translate3d(0, -75px, 0)
+    span
+      color: $color1
+      +gpu
+      
+  &::before, &::after
+    content: ''
+    display: inline-block
+    position: absolute
+    width: 75%
+    height: 200px
+    border-radius: 50%
+    z-index: 0
+    backface-visibility: hidden
+    transform: translate3d(0, 0, 0)
+    transition: transform 0.7s
+    
+  &::before
+    left: -15%
+    bottom: 101%
+    
+  &::after
+    right: -15%
+    top: 101%
+    
+  span
+    position: relative
+    z-index: 1
+    transition: color 0.6s, opacity 0.6s
+    color: $color2
+    
+  &_white
+    background-color: $white
+    span
+      color: $color1
+    .no-touch &:hover span
+      color: $color2
+    
+  &_white-hov
+    &::before, &::after
+      background-color: $white
+      
+  &_dark-green-hov
+    &::before, &::after
+      background-color: $color1
+    
+  &_green-hov
+    &::before, &::after
+      background-color: $color2
+      
+  &_yellow
+    box-shadow: 0 20px 30px rgba(65, 90, 77, 0.35)
+    background-color: #feff00
+    .no-touch &:hover span
+      color: #fff
+    
+    &::before, &::after
+      background-color: darken(#94c5aa, 15)
+    
+    span
+      color: $color1
+      
+  &_light-green
+    background-color: $color2
+  
+    span
+      color: $color1
+      
+  &_sm
+    padding: 20px 30px 19px
+
+.play-btn
+  $parent: &
+  display: flex
+  align-items: center
+  
+  &__icon
+    position: relative
+    z-index: 2
+    display: flex
+    align-items: center
+    justify-content: center
+    margin-right: 15px
+    width: 52px
+    height: 52px
+    border-radius: 50%
+    background-color: $white
+    overflow: hidden
+    
+    &::before
+      display: block
+      z-index: 2
+      +arr(10, 10, $color2, r)
+      content: ''
+  
+    &::after
+      position: absolute
+      z-index: 1
+      width: 100%
+      height: 100%
+      opacity: 0.5
+      transform: scale(0)
+      background-color: $color1
+      transition: .4s ease-in-out
+      border-radius: 50%
+      content: ''
+      
+      #{$parent}:hover &
+        opacity: 1
+        transform: scale(1.3)
+    
+  &__text
+    +f('gil-700', 13, 13)
+    text-transform: uppercase
+    letter-spacing: 1px
+    color: $color1
+    transition: .4s ease-in-out
+    
+    #{$parent}:hover &
+      color: $white
+    
+/* selection
+	----------------------------------- */
+::selection
+   background: $color2
+
+::-moz-selection
+   background: $color2
+  
+// default anims
+[data-anim='bg']
+  opacity: 0
+  transform: translateX(-100px)
+  
+[data-anim='fade-y']
+  opacity: 0
+  transform: translateY(60px)
+
+[data-anim-stagger="fade-x"]
+  > *
+    opacity: 0
+    transform: translateX(-60px)
+
+[data-anim-stagger="fade-y"]
+  > *
+    opacity: 0
+    transform: translateY(30px)

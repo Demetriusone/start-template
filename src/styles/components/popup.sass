@@ -1,0 +1,297 @@
+.popup
+   position: fixed
+   top: 0
+   right: 0
+   bottom: 0
+   left: 0
+   opacity: 0
+   visibility: hidden
+   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"
+   z-index: 1300
+   overflow: auto
+   outline: 0
+   text-align: center
+   font-size: 0
+   transform: translate3d(0, 0, 0)
+   background-color: rgba($color1, .6)
+   transition: opacity .3s ease, transform .5s ease, visibility .5s
+   will-change: opacity, transform
+   $parent: &
+   &:after
+      content: ''
+      display: inline-block
+      vertical-align: middle
+      width: 0
+      height: 100%
+      
+   &_promo
+      +xs
+         padding: 0 15px
+   
+   &.opened
+      opacity: 1
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"
+      visibility: visible
+   
+   &__close
+      position: absolute
+      top: 20px
+      right: 20px
+      width: 21px
+      height: 21px
+      cursor: pointer
+      padding: 0
+      display: flex
+      align-items: center
+      justify-content: center
+      border: 0
+      +xs
+         top: 10px
+         right: 12px
+         width: 17px
+      
+      #{$parent}_promo &
+         top: -22px
+         right: -22px
+         +xs
+            top: -35px
+            right: 5px
+      
+      &:hover svg
+         fill: darken($color1, 50)
+      
+      svg
+         fill: $color1
+         stroke-width: 1px
+         stroke: $color1
+         +trs
+         
+         #{$parent}_promo &
+            fill: $white
+            stroke: $white
+            width: 12px
+            height: 12px
+            stroke-width: 2px
+            
+            &:hover
+               fill: darken($color1, 20)
+               stroke: darken($color1, 20)
+   
+   &__container
+      display: inline-block
+      vertical-align: middle
+      max-width: 900px
+      width: 100%
+      position: relative
+      padding: 70px 50px 55px
+      margin: 30px auto
+      transition: opacity .5s ease, transform .5s ease
+      transform: translate3d(0, -100px, 0)
+      will-change: transform, opacity
+      background: $white
+      text-align: left
+      border-radius: 5px
+      box-shadow: 0 0 15px rgba($black, .2)
+      +md
+         max-width: 708px
+      +xs
+         max-width: 320px
+         margin: 0
+         padding: 40px 10px
+      +mob-fix
+         padding: 100px 4px 100px 14px
+      
+      #{$parent}_promo &
+         max-width: 620px
+         padding: 30px
+         margin: 40px auto
+         text-align: center
+         background-image: linear-gradient(135deg, #94c5aa 25%, #41594d 25%, #41594d 50%, #94c5aa 50%, #94c5aa 75%, #41594d 75%, #41594d 100%)
+         background-size: 130px 130px
+         border-radius: 0
+         +xs
+            padding: 15px
+
+
+body.popup-opened
+   overflow: hidden
+
+.popup.opened .popup__container
+   -webkit-transform: translate3d(0, 0, 0)
+   -moz-transform: translate3d(0, 0, 0)
+   transform: translate3d(0, 0, 0)
+
+// pops
+.remind-pass
+   text-align: center
+   
+   &__text
+      margin-bottom: 40px
+      +xs
+         margin-bottom: 25px
+   
+   &__title
+      margin-bottom: 10px
+      +xs
+         font-size: 25px
+   
+   p
+      +f('gil-700', 18)
+      letter-spacing: 0.5px
+      color: $color3
+      +xs
+         font-size: 16px
+
+// promo-popup
+.promo-popup
+   position: relative
+   padding: 50px 30px
+   box-shadow: 0 9px 27px 5px rgba(95, 38, 56, 0.69)
+   background: #53715c url("../img/decor/promo_bg-friday.png") no-repeat 50% 50% / cover
+   overflow: hidden
+   +sm
+      padding: 20px 20px 25px
+   
+   &__descr
+      max-width: 390px
+      margin: 0 auto
+      +f('gil-500')
+      font-size: 20px
+      color: #fff
+      +xs
+         font-size: 14px
+   
+   &__title
+      margin: 30px 0 15px
+      +f('gil-800')
+      font-size: 50px
+      color: #fff
+      +sm
+         margin: 15px 0
+         line-height: 44px
+   
+   &__sub-title
+      position: relative
+      display: inline-block
+      margin: 10px 0 25px
+      color: #fff
+      +f('gil-900')
+      +xs
+         font-size: 23px
+      &::after
+         position: absolute
+         top: 38px
+         left: 93%
+         z-index: 1
+         width: 62px
+         height: 149px
+         background: url("../img/decor/curved-arr_white.png")
+         content: ''
+         +sm
+            top: 23px
+         +xs
+            display: none
+      
+      &_sm::after
+         top: 25px
+         left: calc(100% + 5px)
+         transform: rotate(-5deg)
+   
+   &__price
+      margin-bottom: 10px
+      color: #feff00
+      +f('gil-900')
+      font-size: 30px
+      +xs
+         margin-bottom: 15px
+      span
+         font-size: 50px
+         margin-left: 0.1em
+         letter-spacing: 0.05em
+      
+      &-old
+         +f('gil-400')
+         font-size: 24px
+         color: #fff
+         
+         span
+            position: relative
+            
+            &::after
+               position: absolute
+               top: 50%
+               left: 0
+               transform: translateY(-50%)
+               width: 100%
+               height: 2px
+               background-color: #fff
+               content: ''
+   
+   &__discount
+      position: absolute
+      top: 35px
+      right: calc(100% - 30px)
+      z-index: 1
+      display: flex
+      align-items: center
+      justify-content: flex-start
+      width: 124px
+      height: 122px
+      padding-top: 9px
+      padding-left: 13px
+      background: url("../img/decor/promo-discount_bg.png") no-repeat 47% 10%
+      font-size: 37px
+      color: #384e43
+      border-radius: 50%
+      box-shadow: 0 20px 30px rgba(38, 56, 46, 0.35)
+      overflow: hidden
+      +xs
+         display: none
+      &::before, &::after
+         content: ''
+         position: absolute
+         z-index: 1
+         width: 10px
+         height: 10px
+         background-color: #83918b
+         border-radius: 50%
+      &::before
+         top: 50px
+         right: 30px
+         content: ''
+      &::after
+         right: 14px
+         bottom: 45px
+         content: ''
+         
+         
+         span
+            position: absolute
+            top: 0
+            left: 0
+   
+   &__btn
+      margin-top: 40px
+      padding: 18px 40px
+      font-size: 12px
+      +sm
+         margin-top: 20px
+   
+   &__label
+      position: absolute
+      right: -85px
+      bottom: 25px
+      padding: 10px
+      width: 300px
+      transform: rotate(-45deg)
+      box-shadow: 0 20px 30px rgba(38, 56, 46, 0.35)
+      background-color: #d70000
+      text-align: center
+      color: #fff
+      +f('gil-600', 14, 18)
+      +xs
+         display: none
+      span
+         display: block
+         margin: 0 auto
+         max-width: 130px

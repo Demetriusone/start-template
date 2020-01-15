@@ -1,0 +1,120 @@
+.instruction
+   position: relative
+   padding: 100px 0
+   text-align: center
+   +xs
+      padding: 60px 0
+   
+   &__container
+      max-width: 1070px
+      +xs
+         padding: 0 20px
+    
+   &__back-title
+      margin-top: -252px
+   
+   &__title
+      margin-bottom: 60px
+      padding-left: 50px
+      line-height: 42px
+      +xs
+         margin-bottom: 30px
+         padding-left: 0
+         font-size: 30px
+         line-height: 35px
+      span
+         display: block
+         color: $color1
+      
+   &__row
+      display: flex
+      margin: 0 -15px
+      +md
+         display: block
+         margin: 0 auto
+         max-width: 458px
+      
+   &__step
+      padding: 0 15px
+      flex: 0 1 33.33333%
+      +md
+         display: flex
+         align-items: center
+         flex: none
+         padding: 0
+      +xs
+         display: block
+         
+      &:not(:last-child)
+         +md
+            margin-bottom: 30px
+      
+      &-circle
+         display: flex
+         align-items: center
+         justify-content: center
+         width: 120px
+         height: 120px
+         margin: 0 auto 30px
+         border-radius: 50%
+         background-color: $color1
+         overflow: hidden
+         +md
+            margin: 0 40px 0 0
+            flex-shrink: 0
+         +xs
+            margin: 0 auto 20px
+            
+      &-icon
+         fill: $white
+         
+         &.icon-instruction
+            &_1
+               width: 43px
+               
+            &_2
+               width: 56px
+               
+            &_3
+               width: 50px
+               
+      &-text
+         +md
+            text-align: left
+         +xs
+            text-align: center
+
+      &-title
+         margin-bottom: 28px
+         color: $color1
+         +md
+            margin-bottom: 20px
+         +xs
+            margin-bottom: 10px
+         
+      br
+         +sm
+            display: none
+
+   &__add
+      margin-top: 95px
+      +xs
+         margin-top: 60px
+      
+      &-title
+         max-width: 590px
+         margin: 0 auto 23px
+         color: $color1
+      
+      &-list
+         justify-content: space-around
+         +md
+            margin: 0 -15px
+         li
+            flex: 0 0 285px
+            line-height: 24px
+            +md
+               flex: 1
+               padding: 30px 15px 0
+            +xs
+               flex: none
