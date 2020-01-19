@@ -1,0 +1,36 @@
+//fonts
+=font($alias, $name)
+   @font-face
+      font-family: $alias
+      src: url("../fonts/" + $name + ".eot")
+      src: url("../fonts/" + $name + ".eot?#iefix") format("embedded-opentype"), url("../fonts/" + $name + ".woff") format("woff"), url("../fonts/" + $name + ".woff2") format("woff2"), url("../fonts/" + $name + ".ttf") format("truetype")
+      font-weight: normal
+      font-style: normal
+
++font('Exo2-Bold', 'Exo2-Bold')
++font('GothamPro-Black', 'GothamPro-Black')
++font('GothamPro-Bold', 'GothamPro-Bold')
++font('GothamPro-Medium', 'GothamPro-Medium')
++font('GothamPro', 'GothamPro')
+
+=f($name, $font-size: null, $line-height: null, $letter-spacing: null)
+   $font-family: null
+   @if $name == "ex700"
+      $font-family: "Exo2-Bold"
+   @if $name == "gp900"
+      $font-family: "GothamPro-Black"
+   @if $name == "gp700"
+      $font-family: "GothamPro-Bold"
+   @if $name == "gp500"
+      $font-family: "GothamPro-Medium"
+   @if $name == "gp400"
+      $font-family: "GothamPro"
+   font-family: $font-family, Arial, sans-serif
+   @if $font-family != null
+      font-weight: normal
+   @if $font-size != null
+      font-size: $font-size * 1px
+   @if $line-height != null
+      line-height: $line-height * 1px
+   @if $letter-spacing != null
+      letter-spacing: ($letter-spacing / 1000) * 1em

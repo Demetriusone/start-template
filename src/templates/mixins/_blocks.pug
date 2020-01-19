@@ -1,0 +1,25 @@
+mixin btn(type, text, classMod, popup)
+	case type
+		when 'a'
+			+e.A.btn.btn(class= classMod href='#!')= text
+		when 'b'
+			+e.BUTTON.btn.btn(class= classMod type='button' data-popup-target= popup)= text
+
+mixin sectTitle(label, text, classMod, text2)
+	+b.section-title(class= classMod)
+		+i('decor-triangle', 'section-title__icon')
+		+e.SPAN.label= label
+		+e.H2.text= text
+		if text2
+			+e.H2.text= text2
+
+mixin videoBlock(text, classMod)
+	+b.video-block(class= classMod)
+		+e.BUTTON.play-btn(type='button')
+			+i('triangle-play', 'video-block__play-btn-icon')
+		+e.VIDEO.video(playsinline='playsinline' loop='loop' preload='auto')
+			source(src='video/video-sample.mp4' type='video/mp4')
+		+e.P.text= text
+		+e.corner._top
+		+e.corner._bot
+		+i('decor-triangle', 'video-block__decor-triangle')

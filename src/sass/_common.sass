@@ -1,0 +1,29 @@
+body
+   position: relative
+   min-width: 320px
+   -webkit-font-smoothing: antialiased
+   -moz-osx-font-smoothing: grayscale
+   +f('gp400', 18, 28)
+   color: $color1
+   +xs
+      font-size: 16px
+      line-height: 26px
+   &.is-locked
+      position: fixed
+      top: 0
+      left: 0
+      right: 0
+      height: 0
+      overflow: hidden
+
+.container
+   max-width: 1170px
+   margin: 0 auto
+   padding: 0 15px
+   
+.row
+   display: flex
+   flex-wrap: wrap
+   margin: 0 -15px
+
+

@@ -1,0 +1,44 @@
+mixin popup(el)
+	case el.name
+
+		when 'add-testimonial'
+			+b.popup(data-popup-id='add-testimonial', tabindex='-1', role='dialog')
+				+e.container
+					+e.close.js-popup-close: +i('close')
+
+					+b.SECTION.contact._popup
+						+sectTitle('Добавить отзыв', 'Заполните все поля и Ваш отзыв опубликуют после подтвержения администратора', '_center _white contact__title')
+
+						+e.FORM.form.form(action='#!' method='POST')
+							+e.form-row.row
+								+e.form-field.form-field
+									+b.INPUT.form-field__input(type='text' name='' placeholder='Имя' required)
+								+e.form-field.form-field
+									+b.INPUT.form-field__input(type='text' name='' placeholder='Номер телефона...' required)
+								+e.form-field.form-field
+									+b.INPUT.form-field__input(type='text' name='' placeholder='Email...' required)
+							+e.TEXTAREA.form-textarea.textarea(placeholder='Ваше сообщение...' required)
+							+e.form-submit-wrap
+								+e.LABEL.form-submit-btn.form-submit-btn.btn._type-1 Отправить заявку
+									+e.INPUT(type='submit')
+
+		when 'write-us'
+			+b.popup(data-popup-id='write-us', tabindex='-1', role='dialog')
+				+e.container
+					+e.close.js-popup-close: +i('close')
+
+					+b.SECTION.contact._popup
+						+sectTitle('Написать нам', 'Есть вопросы? Пиши или заказывай решение SHL теста', '_center _white contact__title contact__title_sm')
+
+						+e.FORM.form.form(action='#!' method='POST')
+							+e.form-row.row
+								+e.form-field.form-field
+									+b.INPUT.form-field__input(type='text' name='' placeholder='Имя' required)
+								+e.form-field.form-field
+									+b.INPUT.form-field__input(type='text' name='' placeholder='Номер телефона...' required)
+								+e.form-field.form-field
+									+b.INPUT.form-field__input(type='text' name='' placeholder='Email...' required)
+							+e.TEXTAREA.form-textarea.textarea(placeholder='Ваше сообщение...' required)
+							+e.form-submit-wrap
+								+e.LABEL.form-submit-btn.form-submit-btn.btn._type-1 Отправить заявку
+									+e.INPUT(type='submit')
